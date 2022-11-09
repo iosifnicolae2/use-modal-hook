@@ -1,5 +1,15 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import ModalContext from './ModalContext';
+import { ErrorBoundary } from "react-error-boundary";
+
+const ErrorFallback = ({ error }) => {
+  return (
+      <div role="alert">
+        <p>Something went wrong:</p>
+        <pre>{formatError(error)}</pre>
+      </div>
+  );
+};
 
 const ModalProvider = ({ children }) => {
   const [modalsConfig, setConfig] = useState({});
@@ -34,7 +44,14 @@ const ModalProvider = ({ children }) => {
       {Object.keys(modalsConfig).map(modalKey => {
         const { component: Component, isOpen, data } = modalsConfig[modalKey];
 
-        return isOpen && <Component onClose={() => hideModal(modalKey)} key={modalKey} isOpen={isOpen} {...data} />;
+        return isOpen &&
+            <ErrorBoundary
+                FallbackComponent={ErrorFallback}
+            >
+              <Box zIndex={1400 + parseInt(modalKey)}>
+                <Component onClose={() => hideModal(modalKey)} key={modalKey} isOpen={isOpen} {...data} />
+              </Box>
+            </ErrorBoundary>;
       })}
     </ModalContext.Provider>
   );

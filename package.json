@@ -1,6 +1,6 @@
 {
-  "name": "use-modal-hook",
-  "version": "2.1.1",
+  "name": "@iosifnicolae22/use-modal-hook",
+  "version": "2.1.4",
   "description": "React hook for controlling modal components",
   "main": "dist/index.js",
   "scripts": {
@@ -22,9 +22,11 @@
     "useModal"
   ],
   "dependencies": {
+    "pretty-print-error": "^1.1.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0 ",
-    "react-dom": "^18.2.0 "
+    "react-dom": "^18.2.0 ",
+    "react-error-boundary": "^3.1.4"
   },
   "peerDependencies": {
     "prop-types": "^15.8.1",
