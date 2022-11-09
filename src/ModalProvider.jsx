@@ -46,11 +46,10 @@ const ModalProvider = ({ children }) => {
 
         return isOpen &&
             <ErrorBoundary
+                key={`error-boundry-${modalKey}`}
                 FallbackComponent={ErrorFallback}
             >
-              <Box zIndex={1400 + parseInt(modalKey)}>
-                <Component onClose={() => hideModal(modalKey)} key={modalKey} isOpen={isOpen} {...data} />
-              </Box>
+              <Component onClose={() => hideModal(modalKey)} key={modalKey} isOpen={isOpen} {...data} />
             </ErrorBoundary>;
       })}
     </ModalContext.Provider>

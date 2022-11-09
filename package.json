@@ -1,6 +1,6 @@
 {
   "name": "@iosifnicolae22/use-modal-hook",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "description": "React hook for controlling modal components",
   "main": "dist/index.js",
   "scripts": {
