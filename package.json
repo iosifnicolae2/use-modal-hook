@@ -1,6 +1,6 @@
 {
   "name": "@iosifnicolae22/use-modal-hook",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "React hook for controlling modal components",
   "main": "dist/index.js",
   "scripts": {
@@ -47,7 +47,7 @@
     "dist"
   ],
   "author": "alexander.khivrych",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexanderkhivrych/use-modal-hook/issues"
   },
