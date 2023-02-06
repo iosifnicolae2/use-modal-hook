@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import ModalContext from './ModalContext';
 import { ErrorBoundary } from "react-error-boundary";
+import { formatError } from "pretty-print-error";
 
 const ErrorFallback = ({ error }) => {
   return (
